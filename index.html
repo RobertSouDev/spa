@@ -13,33 +13,8 @@
 
     <div id="app"></div>
 
-    <script>
-      const routes = {
-        "/": "/pages/home.html",
-        "/about": "/pages/about.html",
-        "/contato": "/pages/contato.html",
-        404: "/pages/404.html",
-      };
-
-      function route(event) {
-        event = event || window.event;
-        event.preventDefault();
-
-        handle();
-
-        window.history.pushState({}, "", event.target.href);
-      }
-
-      function handle() {
-        const { pathname } = window.location;
-
-        const route = routes[pathname] || routes[404];
-
-        fetch(route).then(dados=> dados.text())
-        .then(html => console.log(html))
-
-        console.log(route);
-      }
+    <script src="src/index.js" type="module">
+      
     </script>
   </body>
 </html>
